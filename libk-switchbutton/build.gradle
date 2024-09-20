@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven-publish'
+
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
     buildToolsVersion BUILD_TOOLS_VERSION
@@ -23,13 +24,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+
 }
-publish {
-    artifactId = 'switchbutton'
-    userOrg = 'kingja'
-    groupId = 'lib.kingja.switchbutton'
-    publishVersion = '1.1.8'
-    desc = 'A smart switchable button,support multiple tabs.'
-    website = 'https://github.com/KingJA/SwitchButton'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.alexdeww.switchbutton'
+                version = '1.1.8'
+            }
+        }
+    }
 }
