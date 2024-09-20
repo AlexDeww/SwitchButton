@@ -1,4 +1,6 @@
 # SwitchButton
+[![](https://jitpack.io/v/AlexDeww/SwitchButton.svg)](https://jitpack.io/#AlexDeww/SwitchButton)
+
 A smart switchable button,support multiple tabs. CLICK THE ***STAR***  if it's useful for you.
 
 ## Preview
@@ -18,7 +20,11 @@ A smart switchable button,support multiple tabs. CLICK THE ***STAR***  if it's u
 ![](https://github.com/KingJA/SwitchButton/blob/master/img/mark.png)
 ## Gradle
 ```xml
- compile 'lib.kingja.switchbutton:switchbutton:1.1.8'
+    maven { url 'https://jitpack.io' }
+
+    dependencies {
+        implementation 'com.github.AlexDeww:SwitchButton:Tag'
+    }
 ```
 
 ## Usage
